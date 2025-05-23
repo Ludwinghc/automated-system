@@ -1,0 +1,11 @@
+# Ignorar los archivos init.py
+**/__init__.py
+# Ignorar el pycache
+**/__pycache__/
+# Ignorar el .cache
+.cache
+# Ignorar las variables
+.env
+# Ignorar los archivos de los modelos de yolo
+/yolov8n-pose.pt
+/yolov8s-pose.pt

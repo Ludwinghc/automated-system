@@ -1,0 +1,24 @@
+# Pipeline con la función de eliminar las ramas de corta duración
+name: Delete short branches
+
+on:
+  push:
+    branches:
+      - Main
+      - Staging
+      - Qa
+jobs: 
+  delete-feature-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Delete feature branches
+        run: |
+          git fetch --prune
+          for branch in $(git branch -r | grep 'origin/feature/' | sed 's/origin\///'); do
+            git push https://x-access-token:${GH_TOKEN}@github.com/Ludwinghc/automated-system.git --delete "$branch" || true
+          done
