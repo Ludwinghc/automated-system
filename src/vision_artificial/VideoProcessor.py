@@ -54,7 +54,7 @@ class VideoProcessor:
                   cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 165, 255), 2)
         
       if elapsed >= PostureConfig.ALERT_DELAY_SECONDS:
-        alert_text = "Alerta! Los estudiantes se deben sentar!!"
+        alert_text = "Los estudiantes se deben sentar!!"
         cv2.rectangle(output_frame, (10,130), (600,180), (0, 0, 255), -1)
         cv2.putText(output_frame, alert_text, (20, 165),
                     cv2.FONT_HERSHEY_SIMPLEX, 1 , (255,255,255), 2)
