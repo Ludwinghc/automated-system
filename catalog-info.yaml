@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: automated-system
+  title: Python automated-system
+  description: Sistema para automatizar mediante visión artificial un salon de clases
+  annotations:
+    github.com/project-slug: Ludwinghc/automated-system
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:https://github.com/Ludwinghc/automated-system/tree/master/
+  tags:
+    - backend
+    - python
+spec:
+  type: System
+  lifecycle: production
+  owner: user:default/ludwinghc
